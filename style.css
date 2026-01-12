@@ -5,16 +5,17 @@
 }
 
 body{
-    color: #2c2c2c;
+    
     line-height: 1.6;
     background-color: #fafafa;
+    font-family: Arial, sans-serif;
 }
 
 :root{
-    --primary : #FF4D00;
-    --primary-dark: #CC3D00;
-    --secondary: #1a1a1a;    
-    --accent: #00D9FF;       
+    --Header : #0F0F0F;
+    --base : #1A1A1A;
+    --Secondary : #C62828;
+    --Footer : #000000;       
     --text-dark: #1a1a1a;
     --text-light: #666;
     --bg-light: #f5f5f5;
@@ -52,7 +53,7 @@ header .container{
     display: flex;
     justify-content: space-between;
     padding: var(--space-sm);
-    background-color: var(--primary);
+    background-color: var(--Header);
 }
 
 nav ul{
@@ -74,13 +75,14 @@ a:hover{
 .hero{
     display: flex;
     padding: var(--space-md);
-    background-color: var(--secondary);
+    background-color: var(--base);
 }
 
 .hero .left-side{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 50%;
 }
 
 .hero .left-side h1{
@@ -93,13 +95,14 @@ a:hover{
 }
 
 .hero .left-side button{
-    width: 100px;
+    width: 120px;
     height: 35px;
     border-radius: 8px;
 }
 
 .hero .left-side button:hover{
-    background-color: #cdc3c3;
+    background-color: var(--Secondary);
+    color: white;
     cursor: pointer;
 }
 
@@ -107,7 +110,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     padding: var(--space-md);
-    background-color: var(--secondary);
+    background-color: var(--base);
     color: white;
     gap: 30px;
     align-items: center;
@@ -146,12 +149,13 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--primary);
+    background-color: var(--base);
     padding: var(--space-sm);
 }
 
 .classes h2{
     font-size: var(--text-lg);
+    color: white;
 }
 
 .classes-holder{
@@ -183,4 +187,239 @@ a:hover{
 .classes-card img{
     width: 70px;
     height: 70px;
+}
+
+.trainers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-md);
+    background-color: var(--base);
+}
+
+.trainers h2{
+    color: white;
+}
+
+#trains{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 100px;
+    color: white;
+    padding: var(--space-md);
+}
+
+.trainer{
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm);
+    border-radius: 8px;
+    background-color: #666;
+}
+
+.trainer button{
+    width: 120px;
+    height: 35px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.trainer button:hover{
+    background-color: var(--Secondary);
+    color: white;
+    cursor: pointer;
+}
+
+.membership{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--base);
+    align-items: center;
+    color: white;
+    padding: var(--space-md);
+}
+
+.price-cont{
+    display: flex;
+    padding: var(--space-md);
+    gap: 100px;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 15px rgba(204, 224, 204, 0.08); 
+    padding: var(--space-sm);
+    border-radius: 8px;
+    min-width: 200px;
+    align-items: center;
+}
+
+.price button{
+    width: 120px;
+    height: 35px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.price button:hover{
+    background-color: var(--Secondary);
+    color: white;
+    cursor: pointer;
+}
+
+footer{
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #e0e0e0;
+    padding: var(--space-xl) var(--space-md) var(--space-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+    pointer-events: none;
+}
+
+.upper{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.col1{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.col1 p{
+    color: #999;
+    line-height: 1.8;
+    max-width: 280px;
+}
+
+.col1 .logo{
+    margin-bottom: var(--space-xs);
+    width: 120px;
+}
+
+.col2 h4,
+.col3 h4,
+.col4 h4{
+    color: var(--Secondary);
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-base);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.col2 ul{
+    list-style: none;
+    padding: 0;
+}
+
+.col2 li{
+    margin-bottom: 12px;
+}
+
+.col2 a{
+    color: #b0b0b0;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.col2 a::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--Secondary);
+    transition: width 0.3s ease;
+}
+
+.col2 a:hover{
+    color: white;
+    transform: translateX(5px);
+}
+
+.col2 a:hover::after{
+    width: 100%;
+}
+
+.col3{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.col3 p{
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.col3 address{
+    font-style: normal;
+}
+
+.col4{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.col4 a{
+    color: #b0b0b0;
+    font-size: var(--text-sm);
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.col4 a:hover{
+    background: var(--Secondary);
+    color: white;
+    border-color: var(--Secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(198, 40, 40, 0.3);
+}
+
+.lower{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+.lower p{
+    color: #666;
+    font-size: var(--text-xs);
+}
+
+.lower p:hover{
+    color: #999;
+    cursor: pointer;
 }
