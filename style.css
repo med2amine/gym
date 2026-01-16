@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body{
@@ -647,23 +648,6 @@ footer::before {
     background-position: center;
 }
 
-/* Page-specific hero images */
-.right-side.home-hero {
-    background-image: url(images/Hero1.png);
-}
-
-.right-side.classes-hero {
-    background-image: url(images/GroupClass.png);
-}
-
-.right-side.trainer-hero {
-    background-image: url(images/GroupTrainers.png);
-}
-
-.right-side.interior-hero {
-    background-image: url(images/interior.png);
-}
-
 .classes-card img{
     width: 100%;
     height: 100%;
@@ -684,3 +668,15 @@ footer::before {
     height: 300px;
 }
 
+
+.Hero-img{
+    width: 90%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.hero .right-side{
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xs);
+}
