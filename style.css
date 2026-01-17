@@ -2,14 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 body{
-    
     line-height: 1.6;
     background-color: #fafafa;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 :root{
@@ -21,7 +20,6 @@ body{
     --text-light: #666;
     --bg-light: #f5f5f5;
     --white: #ffffff;
-
 }
 
 :root {
@@ -33,7 +31,6 @@ body{
     --text-2xl: 48px;
     --text-3xl: 64px;
 }
-
 
 h1 { font-weight: 900; }  
 h2 { font-weight: 800; }
@@ -50,9 +47,11 @@ p { font-weight: 400; }
     --space-2xl: 120px;
 }
 
+/* Header Styles */
 header .container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: var(--space-sm);
     background-color: var(--Header);
 }
@@ -66,18 +65,21 @@ nav ul{
 
 a{
     text-decoration: none;
-    color: white;   
+    color: white;
+    transition: color 0.3s ease;
 }
 
 a:hover{
     color: #666;
 }
 
+/* Hero Section */
 .hero{
     display: flex;
     padding: var(--space-md);
     background-color: var(--base);
     min-height: 90vh;
+    align-items: center;
 }
 
 .hero .left-side{
@@ -89,6 +91,7 @@ a:hover{
 
 .hero .left-side h1{
     color: var(--bg-light);
+    font-size: var(--text-2xl);
 }
 
 .hero .left-side p{
@@ -100,14 +103,34 @@ a:hover{
     width: 120px;
     height: 35px;
     border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .hero .left-side button:hover{
     background-color: var(--Secondary);
     color: white;
-    cursor: pointer;
+    transform: translateY(-2px);
 }
 
+.hero .right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: var(--space-xs);
+}
+
+.Hero-img{
+    width: 90%;
+    height: 80%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Features Section */
 .features{
     display: flex;
     flex-direction: column;
@@ -116,8 +139,6 @@ a:hover{
     color: white;
     gap: 30px;
     align-items: center;
-    padding: var(--space-md);
-
 }
 
 .card-holder{
@@ -125,7 +146,7 @@ a:hover{
     gap: 30px;
     width: 100%;
     justify-content: space-evenly;
-
+    flex-wrap: wrap;
 }
 
 .features .card{
@@ -136,25 +157,26 @@ a:hover{
     border-radius: 8px;
     min-width: 200px;
     align-items: center;
-
+    transition: all 0.3s ease;
 }
 
 .features .card img{
     height: 50px;
     width: 40px;
-
 }
 
 .features .card:hover{
     box-shadow: 0 12px 35px rgba(194, 173, 173, 0.838);
+    transform: translateY(-5px);
 }
 
+/* Classes Section */
 .classes{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--base);
-    padding: var(--space-sm);
+    padding: var(--space-md);
 }
 
 .classes h2{
@@ -164,9 +186,10 @@ a:hover{
 
 .classes-holder{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
     padding: var(--space-md);
+    width: 100%;
 }
 
 .classes-card{
@@ -177,7 +200,14 @@ a:hover{
     background-color: white;
     min-width: 200px;
     border-radius: 9px;
-    box-shadow: 2px 4px 15px rgba(47, 42, 46, 0.82); 
+    box-shadow: 2px 4px 15px rgba(47, 42, 46, 0.82);
+    padding: var(--space-sm);
+    transition: all 0.3s ease;
+}
+
+.classes-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(47, 42, 46, 0.9);
 }
 
 .classes-card a{
@@ -189,10 +219,13 @@ a:hover{
 }
 
 .classes-card img{
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
+/* Trainers Section */
 .trainers{
     display: flex;
     flex-direction: column;
@@ -207,10 +240,11 @@ a:hover{
 
 #trains{
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 100px;
     color: white;
     padding: var(--space-md);
+    width: 100%;
 }
 
 .trainer{
@@ -219,6 +253,19 @@ a:hover{
     padding: var(--space-sm);
     border-radius: 8px;
     background-color: #666;
+    transition: all 0.3s ease;
+}
+
+.trainer:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.trainer img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .trainer button{
@@ -226,14 +273,17 @@ a:hover{
     height: 35px;
     border-radius: 8px;
     border-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .trainer button:hover{
     background-color: var(--Secondary);
     color: white;
-    cursor: pointer;
+    transform: translateY(-2px);
 }
 
+/* Membership Section */
 .membership{
     display: flex;
     flex-direction: column;
@@ -249,6 +299,7 @@ a:hover{
     gap: 100px;
     width: 100%;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .price{
@@ -259,6 +310,12 @@ a:hover{
     border-radius: 8px;
     min-width: 200px;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.price:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(204, 224, 204, 0.2);
 }
 
 .price button{
@@ -266,14 +323,17 @@ a:hover{
     height: 35px;
     border-radius: 8px;
     border-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .price button:hover{
     background-color: var(--Secondary);
     color: white;
-    cursor: pointer;
+    transform: translateY(-2px);
 }
 
+/* Footer Styles */
 footer{
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     color: #e0e0e0;
@@ -281,7 +341,6 @@ footer{
     position: relative;
     overflow: hidden;
 }
-
 
 footer::before {
     content: '';
@@ -417,11 +476,14 @@ footer::before {
     padding-top: var(--space-md);
     position: relative;
     z-index: 1;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .lower p{
     color: #666;
     font-size: var(--text-xs);
+    transition: color 0.3s ease;
 }
 
 .lower p:hover{
@@ -429,6 +491,7 @@ footer::before {
     cursor: pointer;
 }
 
+/* Class Grid Section */
 .class-grid{
     background-color: var(--base);
     display: flex;
@@ -440,21 +503,34 @@ footer::before {
 .grid-cont{
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     padding: var(--space-md);
-    gap: 10px;
+    gap: 20px;
 }
 
 .class{
     display: flex;
     flex-direction: column;
-    max-width: 200px;
+    max-width: 100%;
     box-shadow: 2px 4px 15px rgba(204, 224, 204, 0.08);
     background-color: white;
     border-radius: 10px;
     align-items: center;
     gap: 10px;
-    padding: var(--space-xs);
+    padding: var(--space-sm);
+    transition: all 0.3s ease;
+}
+
+.class:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(204, 224, 204, 0.2);
+}
+
+.class img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .class button{
@@ -462,19 +538,23 @@ footer::before {
     height: 30px;
     border-radius: 5px;
     border-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .class button:hover{
     background-color: var(--Secondary);
     color: white;
+    transform: translateY(-2px);
 }
 
+/* Trainer Grid Section */
 .trainer-grid{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     background-color: var(--base);
     padding: var(--space-md);
-    gap: var(--space-sm);
+    gap: var(--space-md);
 }
 
 .coach{
@@ -482,30 +562,48 @@ footer::before {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    padding: var(--space-xs);
+    padding: var(--space-sm);
     gap: 10px;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.coach:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.coach img{
+    width: 100%;
+    max-width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .coach button{
     width: 120px;
     height: 30px;
     border-radius: 5px;
-    border-style:none;
+    border-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .coach button:hover{
     background-color: var(--Secondary);
     color: white;
-
+    transform: translateY(-2px);
 }
 
+/* Price Comparison Section */
 .price-comp{
     background-color: var(--base);
     display: flex;
     justify-content: space-evenly;
     padding: var(--space-md);
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .plan{
@@ -515,19 +613,30 @@ footer::before {
     min-width: 250px;
     border-radius: 10px;
     padding: var(--space-sm);
+    transition: all 0.3s ease;
+}
+
+.plan:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .plan button{
     width: 120px;
     height: 30px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .plan button:hover{
     background-color: var(--Secondary);
     color: white;
+    transform: translateY(-2px);
 }
 
+/* FAQ Section */
 .FAQ{
     display: flex;
     flex-direction: column;
@@ -540,24 +649,35 @@ footer::before {
 
 .faq{
     width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: var(--space-xs);
+    gap: 15px;
+    padding: var(--space-sm);
 }
 
+.faq p{
+    padding: var(--space-sm);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--Secondary);
+}
+
+/* Contact Section */
 .main{
     display: flex;
     background-color: var(--base);
     padding: var(--space-md);
     justify-content: space-evenly;
     gap: var(--space-md);
+    min-height: 70vh;
 }
 
 .left{
     width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .left form{
@@ -575,6 +695,8 @@ footer::before {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-family: inherit;
+    font-size: var(--text-sm);
+    transition: all 0.3s ease;
 }
 
 .left form textarea{
@@ -595,6 +717,7 @@ footer::before {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
+    background-color: white;
     transition: all 0.3s ease;
 }
 
@@ -602,6 +725,7 @@ footer::before {
     background-color: var(--Secondary);
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(198, 40, 40, 0.3);
 }
 
 .right{
@@ -610,15 +734,18 @@ footer::before {
     gap: 20px;
     width: 50%;
     color: white;
+    justify-content: center;
 }
 
 .right address{
     font-style: normal;
+    line-height: 1.8;
 }
 
 .social-media{
     display: flex;
     gap: var(--space-sm);
+    flex-wrap: wrap;
 }
 
 .social-media a{
@@ -633,50 +760,260 @@ footer::before {
 .social-media a:hover{
     background-color: white;
     color: var(--base);
+    transform: translateY(-2px);
 }
 
 .logo{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.right-side {
-    width: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets and smaller laptops (1024px and below) */
+@media (max-width: 1024px) {
+    :root {
+        --text-2xl: 40px;
+        --text-xl: 28px;
+        --text-lg: 22px;
+        --space-md: 30px;
+        --space-lg: 40px;
+        --space-xl: 60px;
+    }
+
+    .classes-holder{
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    #trains{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .grid-cont{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trainer-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .upper{
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-md);
+    }
+
+    .price-cont{
+        gap: 50px;
+    }
 }
 
-.classes-card img{
-    width: 100%;
-    height: 100%;
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    :root {
+        --text-2xl: 32px;
+        --text-xl: 24px;
+        --text-lg: 20px;
+        --text-base: 16px;
+        --space-md: 25px;
+        --space-lg: 35px;
+    }
+
+    header .container{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero{
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--space-sm);
+    }
+
+    .hero .left-side,
+    .hero .right-side{
+        width: 100%;
+    }
+
+    .hero .left-side h1{
+        text-align: center;
+    }
+
+    .hero .left-side p{
+        text-align: center;
+    }
+
+    .hero .left-side div{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .card-holder{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .classes-holder{
+        grid-template-columns: 1fr;
+        padding: var(--space-sm);
+    }
+
+    #trains{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .price-cont{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .grid-cont{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .trainer-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .price-comp{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main{
+        flex-direction: column;
+        padding: var(--space-sm);
+    }
+
+    .left,
+    .right{
+        width: 100%;
+    }
+
+    .upper{
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .lower{
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
-.trainer img{
-    height: 200px;
-    width: 150px;
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    :root {
+        --text-2xl: 28px;
+        --text-xl: 22px;
+        --text-lg: 18px;
+        --text-base: 15px;
+        --text-sm: 14px;
+        --space-sm: 15px;
+        --space-md: 20px;
+    }
+
+    header .container{
+        padding: 15px;
+    }
+
+    nav ul{
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .hero{
+        padding: 15px;
+    }
+
+    .Hero-img{
+        width: 100%;
+        height: auto;
+    }
+
+    .features{
+        padding: 15px;
+    }
+
+    .card-holder{
+        gap: 15px;
+    }
+
+    .features .card{
+        min-width: 100%;
+    }
+
+    .grid-cont{
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .class{
+        max-width: 100%;
+    }
+
+    .plan{
+        min-width: 100%;
+    }
+
+    .left form{
+        max-width: 100%;
+    }
+
+    .social-media{
+        flex-direction: column;
+    }
+
+    .social-media a{
+        text-align: center;
+    }
+
+    footer{
+        padding: var(--space-md) 15px 15px;
+    }
+
+    .col1 p{
+        max-width: 100%;
+    }
+
+    .trainer button,
+    .class button,
+    .coach button,
+    .plan button,
+    .price button{
+        width: 100%;
+    }
 }
 
-.class img{
-    width: 100%;
-    height: 100%;
-}
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    :root {
+        --text-2xl: 24px;
+        --text-xl: 20px;
+        --text-lg: 16px;
+    }
 
-.coach img{
-    width: 250px;
-    height: 300px;
-}
+    nav ul li{
+        font-size: 12px;
+    }
 
-
-.Hero-img{
-    width: 90%;
-    height: 80%;
-    border-radius: 20px;
-}
-
-.hero .right-side{
-    display: flex;
-    justify-content: center;
-    padding: var(--space-xs);
+    .hero .left-side button{
+        width: 100px;
+        height: 32px;
+        font-size: 12px;
+    }
 }
